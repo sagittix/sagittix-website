@@ -263,40 +263,40 @@ const TestimonialSection = () => (
                 <blockquote className="text-2xl md:text-3xl font-light text-gray-700 -mt-8 mb-4">
                     Working with Sagittix was a game-changer. They turned our vision into a beautiful, functional app that exceeded all our expectations.
                 </blockquote>
-                <cite className="text-lg text-gray-500 font-semibold">- S.K., CEO of Sagittix</cite>
+                <cite className="text-lg text-gray-500 font-semibold">- Jane Doe, CEO of TechCorp</cite>
             </div>
         </div>
     </section>
 );
 
-// const TeamSection = () => {
-//     const teamMembers = [
-//         { name: "Alex Johnson", role: "Founder & CEO", imageUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&q=80", socialLink: "#" },
-//         { name: "Maria Garcia", role: "Lead iOS Developer", imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&q=80", socialLink: "#" },
-//         { name: "James Smith", role: "Lead Android Developer", imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop&q=80", socialLink: "#" },
-//         { name: "Priya Patel", role: "Head of UI/UX Design", imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&q=80", socialLink: "#" }
-//     ];
+const TeamSection = () => {
+    const teamMembers = [
+        { name: "Alex Johnson", role: "Founder & CEO", imageUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&q=80", socialLink: "#" },
+        { name: "Maria Garcia", role: "Lead iOS Developer", imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&q=80", socialLink: "#" },
+        { name: "James Smith", role: "Lead Android Developer", imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop&q=80", socialLink: "#" },
+        { name: "Priya Patel", role: "Head of UI/UX Design", imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&q=80", socialLink: "#" }
+    ];
 
-//     return (
-//         <section id="team" className="py-20 bg-white/50">
-//             <div className="container mx-auto px-6">
-//                 <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Meet Our Innovators</h2>
-//                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-//                     {teamMembers.map(member => (
-//                         <div key={member.name} className="bg-white/40 backdrop-blur-lg p-6 rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5 text-center transition-transform transform hover:-translate-y-2 flex flex-col items-center">
-//                             {/* <img src={member.imageUrl} alt={`Photo of ${member.name}`} className="w-32 h-32 rounded-full mb-4 shadow-md object-cover" /> */}
-//                             <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
-//                             <p className="text-fuchsia-600 font-medium mb-4">{member.role}</p>
-//                             <a href={member.socialLink} aria-label={`${member.name}'s LinkedIn`} className="text-gray-500 hover:text-fuchsia-500 transition-colors">
-//                                 <LinkedinIcon className="w-6 h-6" />
-//                             </a>
-//                         </div>
-//                     ))}
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// };
+    return (
+        <section id="team" className="py-20 bg-white/50">
+            <div className="container mx-auto px-6">
+                <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Meet Our Innovators</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {teamMembers.map(member => (
+                        <div key={member.name} className="bg-white/40 backdrop-blur-lg p-6 rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5 text-center transition-transform transform hover:-translate-y-2 flex flex-col items-center">
+                            {/* <img src={member.imageUrl} alt={`Photo of ${member.name}`} className="w-32 h-32 rounded-full mb-4 shadow-md object-cover" /> */}
+                            <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
+                            <p className="text-fuchsia-600 font-medium mb-4">{member.role}</p>
+                            <a href={member.socialLink} aria-label={`${member.name}'s LinkedIn`} className="text-gray-500 hover:text-fuchsia-500 transition-colors">
+                                <LinkedinIcon className="w-6 h-6" />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
 
 
 const Footer = () => (

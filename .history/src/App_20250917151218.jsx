@@ -263,7 +263,7 @@ const TestimonialSection = () => (
                 <blockquote className="text-2xl md:text-3xl font-light text-gray-700 -mt-8 mb-4">
                     Working with Sagittix was a game-changer. They turned our vision into a beautiful, functional app that exceeded all our expectations.
                 </blockquote>
-                <cite className="text-lg text-gray-500 font-semibold">- S.K., CEO of Sagittix</cite>
+                <cite className="text-lg text-gray-500 font-semibold">- Jane Doe, CEO of TechCorp</cite>
             </div>
         </div>
     </section>
