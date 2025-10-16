@@ -71,12 +71,15 @@ const AppsSection = () => {
     const apps = [
         { icon: "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=100&h=100&fit=crop&q=80", name: "ConnectSphere", description: "A revolutionary social networking app bringing people closer through shared interests.", links: { appStore: true, googlePlay: true } },
         { icon: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=100&h=100&fit=crop&q=80", name: "FinanceFlow", description: "Simplify your budgeting and expense tracking with our intuitive and powerful finance manager.", links: { appStore: true, googlePlay: true } },
+        { icon: "../assets/icon.png", description: "Discover inner tranquility with guided meditations, relaxing soundscapes, and personal mindfulness journeys.", name: "SadhanaApp", links: { appStore: true, googlePlay: false } },
         { 
+            // 💡 Action: Replace the string path ("./assets/icon.png") with the imported variable
             icon: sadhanaAppIcon, 
             description: "Discover inner tranquility with guided meditations, relaxing soundscapes, and personal mindfulness journeys.", 
             name: "SadhanaApp", 
             links: { appStore: true, googlePlay: false } 
         }
+    
     ];
 
     return (
