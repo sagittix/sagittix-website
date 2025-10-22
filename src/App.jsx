@@ -1,4 +1,5 @@
-mport React, { useState } from 'react';
+import React, { useState } from 'react';
+import sadhanaAppIcon from '../assets/icon.png'; 
 
 // --- Animated SVG Blobs for Background ---
 const BackgroundBlobs = () => (
@@ -22,54 +23,66 @@ const SparkleIcon = ({ className }) => <svg className={className} fill="currentC
 const IphoneIcon = ({ className }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>;
 const AndroidIcon = ({ className }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 9.5H7M12 17.5v-8"/><path d="M6 14.5c0 3.31 2.69 6 6 6s6-2.69 6-6V9c0-3.31-2.69-6-6-6s-6 2.69-6 6v5.5z"/><path d="M9 4.5 7.5 3M15 4.5l1.5-1.5"/></svg>;
 const DesignIcon = ({ className }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>;
-
+const HandshakeIcon = ({ className }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 18s-2 1-3 1-3-1-3-1l-3 3v-3l-2-2m-1-1v3l3 3 2 2 3-3 2-2 3-3V6l-3-3-2-2-3 3-2 2z"></path></svg>;
+const MailIcon = ({ className }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>;
 
 // --- Components ---
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const navLinks = [{ href: '#apps', label: 'Our Apps' }, { href: '#services', label: 'Services'}, { href: '#features', label: 'Why Us' }, { href: '#team', label: 'Team' }, { href: '#ideahub', label: 'Idea Hub' }, { href: '#contact', label: 'Contact' }];
+    const [isOpen, setIsOpen] = useState(false);
+    const navLinks = [{ href: '#apps', label: 'Our Apps' }, { href: '#expertise', label: 'Expertise'}, { href: '#transform', label: 'Transform'}, { href: '#our-story', label: 'Our Story' }, { href: '#contact', label: 'Contact' }];
 
-  return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
-      <nav className="bg-white/40 backdrop-blur-md rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 px-6 py-3 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500">AppCrafters</a>
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map(link => <a key={link.href} href={link.href} className="text-gray-700 hover:text-fuchsia-600 font-medium transition-colors">{link.label}</a>)}
-        </div>
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800 focus:outline-none"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path></svg></button>
-        </div>
-      </nav>
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white/80 backdrop-blur-md mt-2 rounded-lg shadow-lg`}><div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        {navLinks.map(link => <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-fuchsia-500 transition-colors">{link.label}</a>)}
-      </div></div>
-    </header>
-  );
+    return (
+        <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
+            <nav className="bg-white/40 backdrop-blur-md rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 px-6 py-3 flex justify-between items-center">
+                <a href="#" className="text-2xl font-bold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500">Sagittix</a>
+                <div className="hidden md:flex space-x-8">
+                    {navLinks.map(link => <a key={link.href} href={link.href} className="text-gray-700 hover:text-fuchsia-600 font-medium transition-colors">{link.label}</a>)}
+                </div>
+                <div className="md:hidden">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800 focus:outline-none"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path></svg></button>
+                </div>
+            </nav>
+            <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white/80 backdrop-blur-md mt-2 rounded-lg shadow-lg`}><div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                {navLinks.map(link => <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-fuchsia-500 transition-colors">{link.label}</a>)}
+            </div></div>
+        </header>
+    );
 };
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-28">
-    <BackgroundBlobs />
-    <div className="container mx-auto px-6 text-center relative z-10">
-      <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-gray-800">
-        From Idea to <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500">Iconic App</span>
-      </h1>
-      <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-        We build beautiful, high-performance mobile apps for iOS & Android that captivate users and grow your business.
-      </p>
-      <a href="#ideahub" className="text-lg bg-gradient-to-r from-fuchsia-600 to-orange-500 hover:from-fuchsia-700 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-full transition-transform transform hover:scale-105 shadow-lg">
-        Start Creating Now
-      </a>
-    </div>
-  </section>
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-28">
+        <BackgroundBlobs />
+        <div className="container mx-auto px-6 text-center relative z-10">
+            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-gray-800">
+                Crafting Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500">Digital World</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                We are Sagittix, a product-first company. We design and build our own portfolio of apps to solve real-world problems and captivate users.
+            </p>
+            <a href="#transform" className="text-lg bg-gradient-to-r from-fuchsia-600 to-orange-500 hover:from-fuchsia-700 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-full transition-transform transform hover:scale-105 shadow-lg">
+                Let's Build Something Together
+            </a>
+        </div>
+    </section>
 );
 
 const AppsSection = () => {
     const apps = [
         { icon: "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=100&h=100&fit=crop&q=80", name: "ConnectSphere", description: "A revolutionary social networking app bringing people closer through shared interests.", links: { appStore: true, googlePlay: true } },
         { icon: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=100&h=100&fit=crop&q=80", name: "FinanceFlow", description: "Simplify your budgeting and expense tracking with our intuitive and powerful finance manager.", links: { appStore: true, googlePlay: true } },
-        { icon: "https://images.unsplash.com/photo-1557683311-eac92134e648?w=100&h=100&fit=crop&q=80", name: "ZenQuest", description: "Find calm with guided meditations, mindfulness exercises, and relaxing soundscapes.", links: { appStore: true, googlePlay: false } }
+        //{ icon: "../assets/icon.png", description: "Discover inner tranquility with guided meditations, relaxing soundscapes, and personal mindfulness journeys.", name: "SadhanaApp", links: { appStore: true, googlePlay: false } },
+        { 
+            // 💡 Action: Replace the string path ("./assets/icon.png") with the imported variable
+            icon: sadhanaAppIcon, 
+            description: "Discover inner tranquility with guided meditations, relaxing soundscapes, and personal mindfulness journeys.", 
+            name: "SadhanaApp", 
+                links: {
+              appStore: "https://apps.apple.com/in/app/sadhana-jap-mala-meditation/id6751780381",
+              googlePlay: "https://play.google.com/store/apps/details?id=com.sumitmaggie.sadhana&pcampaignid=web_share"
+            }
+        }
+    
     ];
 
     return (
@@ -93,7 +106,7 @@ const AppsSection = () => {
     );
 };
 
-const ServicesSection = () => {
+const ExpertiseSection = () => {
     const services = [
         { icon: <IphoneIcon className="w-12 h-12 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500" />, title: "iOS Development", description: "We build stunning, high-performance native iOS apps for iPhone and iPad using Swift and SwiftUI." },
         { icon: <AndroidIcon className="w-12 h-12 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500" />, title: "Android Development", description: "Crafting scalable and secure native Android applications with Kotlin for a seamless user experience." },
@@ -101,9 +114,9 @@ const ServicesSection = () => {
     ];
 
     return (
-        <section id="services" className="py-20 bg-white">
+        <section id="expertise" className="py-20 bg-white">
             <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+                <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Our Expertise in Action</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {services.map(service => (
                         <div key={service.title} className="bg-white/40 backdrop-blur-lg p-8 rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5 text-center transition-transform transform hover:-translate-y-2">
@@ -118,29 +131,22 @@ const ServicesSection = () => {
     );
 };
 
-const FeaturesSection = () => {
-    const features = [
-        { icon: <PaletteIcon className="w-12 h-12 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500" />, title: "Pixel-Perfect Design", description: "We obsess over UI/UX to create intuitive and visually stunning interfaces." },
-        { icon: <CodeIcon className="w-12 h-12 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500" />, title: "Robust Engineering", description: "Our code is clean, scalable, and built for optimal performance and security." },
-        { icon: <RocketIcon className="w-12 h-12 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-orange-500" />, title: "Agile Deployment", description: "We deliver products swiftly and efficiently, ensuring you get to market faster." }
-    ];
-
-    return (
-        <section id="features" className="py-20 bg-white/50">
-            <div className="container mx-auto px-6"><h2 className="text-4xl font-bold text-center text-gray-800 mb-12">The Art Behind Our Code</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                    {features.map(feature => (
-                        <div key={feature.title} className="p-6">
-                            <div className="flex justify-center mb-4">{feature.icon}</div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
-                            <p className="text-gray-600">{feature.description}</p>
-                        </div>
-                    ))}
-                </div>
+const TransformSection = () => (
+    <section id="transform" className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-6 text-center">
+            <HandshakeIcon className="w-16 h-16 mx-auto mb-4 text-white"/>
+            <h2 className="text-4xl font-bold mb-4">Ready to Transform Your World?</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                We're always seeking a new challenge. If you have a brilliant idea for an app that can change how people interact with a real-world product or service, we're ready to listen.
+            </p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="#ideahub" className="text-lg bg-gradient-to-r from-fuchsia-600 to-orange-500 hover:from-fuchsia-700 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-full transition-transform transform hover:scale-105 shadow-lg">
+                    Pitch Your Idea
+                </a>
             </div>
-        </section>
-    );
-};
+        </div>
+    </section>
+);
 
 
 const ResultsModal = ({ isOpen, onClose, concepts, isLoading }) => {
@@ -255,54 +261,107 @@ const IdeaHubSection = () => {
     );
 };
 
-const TestimonialSection = () => (
-    <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 text-center">
-            <div className="max-w-3xl mx-auto">
-                 <p className="text-6xl text-gray-200 font-serif">“</p>
-                <blockquote className="text-2xl md:text-3xl font-light text-gray-700 -mt-8 mb-4">
-                    Working with AppCrafters was a game-changer. They turned our vision into a beautiful, functional app that exceeded all our expectations.
-                </blockquote>
-                <cite className="text-lg text-gray-500 font-semibold">- Jane Doe, CEO of TechCorp</cite>
+const OurStorySection = () => (
+    <section id="our-story" className="py-20 bg-white/50">
+        <div className="container mx-auto px-6 max-w-4xl">
+            <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">Our Journey of Creation</h2>
+            <p className="text-lg text-gray-600 mb-8 text-center">
+                At Sagittix, we are passionate about the entire product lifecycle, from the first spark of inspiration to the final, polished application. This is our process for bringing our own apps to life.
+            </p>
+            <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-8 text-center">
+                <div className="flex flex-col items-center">
+                    <SparkleIcon className="w-12 h-12 text-fuchsia-600 mb-4"/>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">1. Ideation</h3>
+                    <p className="text-gray-600">We start with a real-world problem and brainstorm innovative app-based solutions that can solve it.</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <DesignIcon className="w-12 h-12 text-orange-500 mb-4"/>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">2. Design & Refinement</h3>
+                    <p className="text-gray-600">Our design team creates intuitive user experiences and interfaces that are both beautiful and functional.</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <CodeIcon className="w-12 h-12 text-fuchsia-600 mb-4"/>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">3. Development & Launch</h3>
+                    <p className="text-gray-600">We write clean, robust code to transform our designs into high-performance, market-ready applications.</p>
+                </div>
             </div>
         </div>
     </section>
 );
 
-const TeamSection = () => {
-    const teamMembers = [
-        { name: "Alex Johnson", role: "Founder & CEO", imageUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&q=80", socialLink: "#" },
-        { name: "Maria Garcia", role: "Lead iOS Developer", imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&q=80", socialLink: "#" },
-        { name: "James Smith", role: "Lead Android Developer", imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop&q=80", socialLink: "#" },
-        { name: "Priya Patel", role: "Head of UI/UX Design", imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&q=80", socialLink: "#" }
-    ];
+const ContactSection = () => {
+    // State to hold form data and manage UI messages
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [messageSent, setMessageSent] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault(); // Prevents the form from submitting and refreshing the page
+        
+        const { name, email, message } = formData;
+
+        // Basic validation
+        if (!name.trim() || !email.trim() || !message.trim()) {
+            setError('Please fill in all fields.');
+            setMessageSent(false); // Reset message sent state
+            return;
+        }
+
+        // Simulate a successful form submission
+        setError('');
+        setMessageSent(true);
+        setFormData({ name: '', email: '', message: '' }); // Clear the form
+        
+    };
 
     return (
-        <section id="team" className="py-20 bg-white/50">
-            <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Meet Our Innovators</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {teamMembers.map(member => (
-                        <div key={member.name} className="bg-white/40 backdrop-blur-lg p-6 rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5 text-center transition-transform transform hover:-translate-y-2 flex flex-col items-center">
-                            {/* <img src={member.imageUrl} alt={`Photo of ${member.name}`} className="w-32 h-32 rounded-full mb-4 shadow-md object-cover" /> */}
-                            <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
-                            <p className="text-fuchsia-600 font-medium mb-4">{member.role}</p>
-                            <a href={member.socialLink} aria-label={`${member.name}'s LinkedIn`} className="text-gray-500 hover:text-fuchsia-500 transition-colors">
-                                <LinkedinIcon className="w-6 h-6" />
-                            </a>
+        <section id="contact" className="py-20 bg-white/50">
+            <div className="container mx-auto px-6 max-w-2xl">
+                <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">Get In Touch</h2>
+                <p className="text-lg text-gray-600 mb-8 text-center">
+                    Whether you have a product idea or a question about our apps, we'd love to hear from you.
+                </p>
+                <div className="bg-white/40 backdrop-blur-lg p-8 rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5">
+                    {messageSent ? (
+                        <div className="text-center p-8">
+                            <h3 className="text-2xl font-bold text-fuchsia-600 mb-2">Message Sent!</h3>
+                            <p className="text-gray-600">Thank you for reaching out. We will get back to you soon.</p>
                         </div>
-                    ))}
+                    ) : (
+                        <form className="space-y-6" onSubmit={handleFormSubmit}>
+                            <div>
+                                <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Name</label>
+                                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent transition-colors" />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent transition-colors" />
+                            </div>
+                            <div>
+                                <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" value={formData.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent transition-colors"></textarea>
+                            </div>
+                            {error && <p className="text-red-500 text-sm">{error}</p>}
+                            <button type="submit" className="w-full text-lg bg-gradient-to-r from-fuchsia-600 to-orange-500 hover:from-fuchsia-700 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-full transition-transform transform hover:scale-105 shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
         </section>
     );
 };
 
-
 const Footer = () => (
-    <footer id="contact" className="bg-gray-800 text-gray-300">
+    <footer className="bg-gray-800 text-gray-300">
         <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; {new Date().getFullYear()} AppCrafters Inc. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Sagittix Inc. All Rights Reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" aria-label="Twitter" className="hover:text-fuchsia-400 transition-colors"><TwitterIcon className="w-6 h-6" /></a>
                 <a href="#" aria-label="LinkedIn" className="hover:text-fuchsia-400 transition-colors"><LinkedinIcon className="w-6 h-6" /></a>
@@ -313,43 +372,43 @@ const Footer = () => (
 
 
 export default function App() {
-  return (
-    <>
-      <style>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob { animation: blob 7s infinite; }
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-4000 { animation-delay: 4s; }
+    return (
+        <>
+            <style>{`
+                @keyframes blob {
+                    0% { transform: translate(0px, 0px) scale(1); }
+                    33% { transform: translate(30px, -50px) scale(1.1); }
+                    66% { transform: translate(-20px, 20px) scale(0.9); }
+                    100% { transform: translate(0px, 0px) scale(1); }
+                }
+                .animate-blob { animation: blob 7s infinite; }
+                .animation-delay-2000 { animation-delay: 2s; }
+                .animation-delay-4000 { animation-delay: 4s; }
 
-        @keyframes scale-in {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .animate-scale-in { animation: scale-in 0.3s ease-out forwards; }
-        
-        @keyframes pulse-slow {
-          50% { opacity: 0.85; transform: scale(0.98); }
-        }
-        .animate-pulse-slow { animation: pulse-slow 3s infinite cubic-bezier(0.4, 0, 0.6, 1); }
-      `}</style>
-      <div className="bg-gray-50 text-gray-800 antialiased relative">
-        <Header />
-        <main>
-            <HeroSection />
-            <AppsSection />
-            <ServicesSection />
-            <FeaturesSection />
-            <IdeaHubSection />
-            <TestimonialSection />
-            <TeamSection />
-        </main>
-        <Footer />
-      </div>
-    </>
-  );
+                @keyframes scale-in {
+                    from { transform: scale(0.9); opacity: 0; }
+                    to { transform: scale(1); opacity: 1; }
+                }
+                .animate-scale-in { animation: scale-in 0.3s ease-out forwards; }
+                
+                @keyframes pulse-slow {
+                    50% { opacity: 0.85; transform: scale(0.98); }
+                }
+                .animate-pulse-slow { animation: pulse-slow 3s infinite cubic-bezier(0.4, 0, 0.6, 1); }
+            `}</style>
+            <div className="bg-gray-50 text-gray-800 antialiased relative">
+                <Header />
+                <main>
+                    <HeroSection />
+                    <AppsSection />
+                    <ExpertiseSection />
+                    <TransformSection />
+                    <IdeaHubSection />
+                    <OurStorySection />
+                    <ContactSection />
+                    <Footer />
+                </main>
+            </div>
+        </>
+    );
 }
