@@ -87,67 +87,42 @@ const AppsSection = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-b from-gray-50 to-white py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Explore Our Apps
-            </h2>
-            <p className="text-lg text-gray-600">
-            Download and experience our suite of powerful, intuitive apps across
-            platforms.
-            </p>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-            {apps.map((app, index) => (
-            <div
-                key={index}
-                className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300"
-            >
-                <img
-                src={app.icon}
-                alt={app.name}
-                className="w-20 h-20 rounded-xl mb-4"
-                />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {app.name}
-                </h3>
-                <p className="text-gray-600 mb-6">{app.description}</p>
-
-                {app.comingSoon ? (
-                <div className="text-sm font-semibold text-white bg-yellow-500 py-2 px-4 rounded-full">
-                    🚀 Coming Soon
+        <section id="apps" className="py-20 bg-white/50">
+            <div className="container mx-auto px-6"><h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Our Flagship Products</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {apps.map(app => (
+                        <div key={app.name} className="bg-white/40 backdrop-blur-lg p-8 rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center">
+                            <img src={app.icon} alt={`${app.name} icon`} className="w-24 h-24 rounded-3xl mb-6 shadow-md"/>
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">{app.name}</h3>
+                            <p className="text-gray-600 mb-6 flex-grow">{app.description}</p>
+                            <div className="flex flex-wrap justify-center gap-3">
+                                {app.links.appStore && (
+                                <a
+                                    href={app.links.appStore}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center space-x-2 bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 transition-colors"
+                                >
+                                    <AppleIcon className="w-5 h-5" />
+                                    <span>App Store</span>
+                                </a>
+                                )}
+                                {app.links.googlePlay && (
+                                <a
+                                    href={app.links.googlePlay}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center space-x-2 bg-gray-200 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
+                                >
+                                    <PlayStoreIcon className="w-5 h-5" />
+                                    <span>Google Play</span>
+                                </a>
+                                )}
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                ) : (
-                <div className="flex flex-col space-y-3 w-full">
-                    {app.links.appStore && (
-                    <a
-                        href={app.links.appStore}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex justify-center items-center space-x-2 bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-black transition-colors"
-                    >
-                        <AppleIcon className="w-5 h-5" />
-                        <span>App Store</span>
-                    </a>
-                    )}
-
-                    {app.links.googlePlay && (
-                    <a
-                        href={app.links.googlePlay}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex justify-center items-center space-x-2 bg-gray-200 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
-                    >
-                        <PlayStoreIcon className="w-5 h-5" />
-                        <span>Google Play</span>
-                    </a>
-                    )}
-                </div>
-                )}
             </div>
-            ))}
-        </div>
         </section>
     );
 };
